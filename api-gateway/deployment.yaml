@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-gateway
+  template:
+    metadata:
+      labels:
+        app: api-gateway
+    spec:
+      containers:
+        - name: api-gateway
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/api-gateway:2
+          ports:
+            - containerPort: 8080
+          env:
+            - name: EUREKA_SERVER
+              value: http://service-registry:8761/eureka

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dashboard-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dashboard-service
+  template:
+    metadata:
+      labels:
+        app: dashboard-service
+    spec:
+      containers:
+        - name: dashboard-service
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/dashboard-service:2
+          ports:
+            - containerPort: 8084
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/micro_service_dashboard_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: password
+            - name: EUREKA_SERVER
+              value: http://service-registry:8761/eureka
