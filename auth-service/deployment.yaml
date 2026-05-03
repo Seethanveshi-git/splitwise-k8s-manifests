@@ -17,3 +17,11 @@ spec:
           image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/auth-service:2
           ports:
             - containerPort: 8081
+
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://postgres:5432/micro_service_auth_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: postgres
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: password
