@@ -25,3 +25,5 @@ spec:
               value: postgres
             - name: SPRING_DATASOURCE_PASSWORD
               value: password
+            - name: EUREKA_SERVER
+              value: http://service-registry:8761/eureka
