@@ -16,7 +16,7 @@ spec:
         - name: group-service
           image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/group-service:2
           ports:
-            - containerPort: 8082
+            - containerPort: 8084
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres:5432/micro_service_group_db
