@@ -16,7 +16,7 @@ spec:
         - name: dashboard-service
           image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/dashboard-service:2
           ports:
-            - containerPort: 8084
+            - containerPort: 8082
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres:5432/micro_service_dashboard_db
