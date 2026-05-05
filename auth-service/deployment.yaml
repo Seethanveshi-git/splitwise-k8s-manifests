@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: auth-service
+  namespace: my-namespace   
 spec:
   replicas: 1
   selector:
@@ -12,12 +13,13 @@ spec:
       labels:
         app: auth-service
     spec:
+      imagePullSecrets:
+        - name: ecr-secret 
       containers:
         - name: auth-service
           image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/auth-service:15
           ports:
             - containerPort: 8081
-
           env:
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres:5432/micro_service_auth_db
