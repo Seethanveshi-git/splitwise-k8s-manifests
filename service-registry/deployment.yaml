@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: service-registry
+  namespace: my-namespace   
 spec:
   replicas: 1
   selector:
@@ -12,6 +13,8 @@ spec:
       labels:
         app: service-registry
     spec:
+      imagePullSecrets:
+        - name: ecr-secret 
       containers:
         - name: service-registry
           image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/service-registry:2
