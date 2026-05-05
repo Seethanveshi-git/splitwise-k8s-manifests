@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: group-service
-          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/group-service:6
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/group-service:7
           ports:
             - containerPort: 8084
           env:
