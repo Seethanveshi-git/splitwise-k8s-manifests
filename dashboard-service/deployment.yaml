@@ -12,6 +12,8 @@ spec:
       labels:
         app: dashboard-service
     spec:
+      imagePullSecrets:
+        - name: ecr-secret
       containers:
         - name: dashboard-service
           image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/dashboard-service:7
