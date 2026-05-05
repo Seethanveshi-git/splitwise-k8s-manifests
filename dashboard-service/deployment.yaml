@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: dashboard-service
-          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/dashboard-service:15
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/dashboard-service:6
           ports:
             - containerPort: 8082
           env:
