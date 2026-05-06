@@ -16,7 +16,7 @@ spec:
         - name: ecr-secret
       containers:
         - name: group-service
-          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/group-service:12
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/group-service:3
           ports:
             - containerPort: 8084
           env:
