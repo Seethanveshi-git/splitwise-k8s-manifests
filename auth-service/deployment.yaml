@@ -17,7 +17,7 @@ spec:
         - name: ecr-secret 
       containers:
         - name: auth-service
-          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/auth-service:1
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/auth-service:2
           ports:
             - containerPort: 8081
           env:
