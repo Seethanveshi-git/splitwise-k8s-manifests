@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  namespace: my-namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        # Jenkins will automatically update this line with the real ECR image
+        image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/frontend:latest
+        ports:
+        - containerPort: 80
