@@ -16,7 +16,7 @@ spec:
         - name: ecr-secret
       containers:
         - name: dashboard-service
-          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/dashboard-service:3
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/dashboard-service:4
           ports:
             - containerPort: 8082
           env:
