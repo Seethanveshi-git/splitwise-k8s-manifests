@@ -3,19 +3,26 @@ kind: Deployment
 metadata:
   name: frontend
   namespace: my-namespace
+
 spec:
   replicas: 1
+
   selector:
     matchLabels:
       app: frontend
+
   template:
     metadata:
       labels:
         app: frontend
+
     spec:
+      imagePullSecrets:
+        - name: ecr-secret
+
       containers:
-      - name: frontend
-        # Jenkins will automatically update this line with the real ECR image
-        image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/frontend:4
-        ports:
-        - containerPort: 80
+        - name: frontend
+          image: 824033491491.dkr.ecr.ap-south-1.amazonaws.com/frontend:4
+
+          ports:
+            - containerPort: 80
