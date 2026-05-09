@@ -3,11 +3,15 @@ kind: Service
 metadata:
   name: frontend
   namespace: my-namespace
+
 spec:
-  type: LoadBalancer
+  type: NodePort
+
   selector:
     app: frontend
+
   ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
