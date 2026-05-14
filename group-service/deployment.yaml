@@ -20,6 +20,8 @@ spec:
           ports:
             - containerPort: 8084
           env:
+            - name: DT_NODE_ID
+              value: "Group-Test-01" 
             - name: SPRING_DATASOURCE_URL
               value: jdbc:postgresql://postgres:5432/micro_service_group_db
             - name: SPRING_DATASOURCE_USERNAME
