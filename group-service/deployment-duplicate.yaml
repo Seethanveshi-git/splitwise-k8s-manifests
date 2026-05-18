@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: group-service-duplicate
+  name: group-service-blue
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: group-service-duplicate
+      app: group-service
   template:
     metadata:
       labels:
-        app: group-service-duplicate
+        app: group-service
     spec:
       imagePullSecrets:
         - name: ecr-secret
